@@ -1,12 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <p>Vous vous appelez « {{ name }} » !</p>
+    <article>
+        <main>
+            <p>Vous vous appelez « {{ name }} » !</p>
+        </main>
+    </article>
 
-    <a href="{{ path('app_index_get', {
-        nom: name,
-    }) }}">
-        Retour à l'accueil
-    </a>
+    <nav>
+        <a href="{{ path('app_index_get', {
+            nom: name,
+        }) }}" class="btn btn-secondary">
+            Retour à l'accueil
+        </a>
+    </nav>
 {% endblock body %}
-

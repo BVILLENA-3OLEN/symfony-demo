@@ -12,9 +12,16 @@
         {% endblock %}
     </head>
     <body>
-        <h1>{{ page_title }}</h1>
-
-        {% block body %}{% endblock %}
+        <main class="container-fluid">
+            <section>
+                <header>
+                    <h1>{{ page_title }}</h1>
+                </header>
+                <main>
+                    {% block body %}{% endblock %}
+                </main>
+            </section>
+        </main>
     </body>
 </html>
 
