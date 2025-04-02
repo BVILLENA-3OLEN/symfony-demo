@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <p>Vous vous appelez « {{ name }} » !</p>
+
+    <a href="{{ path('app_index_get', {
+        nom: name,
+    }) }}">
+        Retour à l'accueil
+    </a>
+{% endblock body %}
+

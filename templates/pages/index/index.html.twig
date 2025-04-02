@@ -1,0 +1,17 @@
+{% set page_title = 'Accueil' %}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <p>Bienvenue aux 3OLEN 2025 sur ce module "Framework Symfony" !</p>
+
+    {% if nom is not null %}
+        <p>Bonjour {{ nom }} et bienvenue à toi !</p>
+
+        <a href="{{ path('app_hello_name_get', {
+            name: nom,
+        }) }}">
+            Bonjour !
+        </a>
+    {% endif %}
+{% endblock body %}
+
