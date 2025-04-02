@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 #[Route(
     path: '/hello/{name}',
@@ -16,12 +17,19 @@ use Symfony\Component\Routing\Attribute\Route;
 )]
 class HelloNameGetController extends AbstractController
 {
-    public function __invoke(string $name): Response
-    {
+    public function __invoke(
+        TranslatorInterface $translator,
+        string $name
+    ): Response {
         return $this->render(
             view: 'pages/hello/hello-name.html.twig',
             parameters: [
-                'page_title' => 'Bonjour',
+                'page_title' => $translator->trans(
+                    id: 'app.hello.name.title',
+                    parameters: [
+                        '%name%' => $name,
+                    ]
+                ),
                 'name' => $name,
             ],
         );
