@@ -31,6 +31,12 @@
                         </span>
 
                         {{ published_post.title }}
+
+                        <a href="{{ path('app_post_show_get', {
+                            id: published_post.id
+                        }) }}" class="btn btn-info">
+                            👀
+                        </a>
                     </li>
                 {% endfor %}
             </ul>
