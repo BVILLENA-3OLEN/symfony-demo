@@ -13,6 +13,15 @@
             <h2>Les articles publiés</h2>
         </header>
 
+        <nav>
+            <a
+                href="{{ path('app_post_create_get') }}"
+                class="btn btn-primary"
+            >
+                ➕ Nouveau
+            </a>
+        </nav>
+
         <main>
             <ul>
                 {% for published_post in published_posts %}
