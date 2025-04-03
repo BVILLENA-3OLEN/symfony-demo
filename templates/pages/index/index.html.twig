@@ -8,6 +8,26 @@
         </main>
     </article>
 
+    <article>
+        <header>
+            <h2>Les articles publiés</h2>
+        </header>
+
+        <main>
+            <ul>
+                {% for published_post in published_posts %}
+                    <li>
+                        <span class="bg-info">
+                            {{ published_post.publishedAt | date('d/m/Y à H:i')}}
+                        </span>
+
+                        {{ published_post.title }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </main>
+    </article>
+
     {% if nom is not null %}
         <nav>
             <a href="{{ path('app_hello_name_get', {
